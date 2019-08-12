@@ -1,0 +1,27 @@
+/**
+ *  an array sorted in ascending order is rotated at some pivot unknown
+ * You are given a target value to search. If found in the array return its index, otherwise return -1.
+ */
+
+var search = function(arr, target) {
+  if (arr.length === 0) return -1;
+  
+  var index = -1,
+    head = 0,
+    tail = arr.length - 1,
+    mid;
+  
+  while (head <= tail) {
+    mid = Math.floor((head + tail) / 2);
+    if (arr[mid] === target) {
+      index = mid;
+      break;
+    } else if ((arr[head] <= target && target < arr[mid]) ||
+               (arr[head] > arr[mid] && (arr[head] <= target || target < arr[mid]))) {
+      tail = mid - 1;
+    } else {
+      head = mid + 1;
+    }
+  }
+  return index;
+};

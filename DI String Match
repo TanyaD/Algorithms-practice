@@ -1,0 +1,23 @@
+/** Given a string S that only contains "I" (increase) or "D" (decrease), let N = S.length.
+ * Return any permutation A of [0, 1, ..., N] such that for all i = 0, ..., N-1:
+ */
+
+
+var diStringMatch = function(S) {
+    let result = [], min = 0, max = S.length
+    for(i in S){
+        if(S[i] === 'I'){
+            result.push(min)
+            min += 1
+        } else {
+            result.push(max)
+            max -= 1
+        }
+    }
+    if(S[S.length - 1] === 'I'){
+        result.push(min)
+    } else {
+        result.push(max)
+    }
+    return result
+};

@@ -1,4 +1,4 @@
-# Algorythm-practice
+# Algorithms-practice
 ### Code practices in algorithmic, and coding challenges.
 
 

@@ -1,0 +1,13 @@
+function quickSort(arr) {
+	var smaller = []; var larger = [];
+	if (arr.length <= 1)
+		return arr;
+	
+	for (var i = 1; i < arr.length; i++) { 
+		if (arr[i] < arr[0])
+			smaller.push(arr[i]); 
+		if (arr[i] >= arr[0]) 
+			larger.push(arr[i]); 
+	}
+	return quickSort(smaller).concat(arr[0], quickSort(larger));
+}

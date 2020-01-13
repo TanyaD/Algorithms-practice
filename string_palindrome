@@ -1,0 +1,13 @@
+/** Given a string check if string is palindrome
+*/
+
+function palindrome(str){
+  let arr = str.toLowerCase().split('');
+  let mid = Math.floor(arr.length/2)
+  for(let i = 0; i <= mid; i ++){
+    if(arr[i] != arr[arr.length-1-i]){
+      return false
+    }
+  }
+  return true
+}
